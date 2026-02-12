@@ -15,9 +15,10 @@ def health():
 
 @app.route('/webhook/vapi', methods=['POST'])
 def vapi_webhook():
-    """Handle Vapi voice calls"""
+    """Handle Vapi voice calls - pass through to assistant"""
     data = request.json or {}
     
+    # Log the call
     call_record = {
         "id": data.get('id', 'unknown'),
         "timestamp": datetime.now().isoformat(),
@@ -27,11 +28,9 @@ def vapi_webhook():
     calls.append(call_record)
     
     print(f"📞 Vapi call: {data.get('id')}")
-    print(f"   Message type: {data.get('message', {}).get('type', 'unknown')}")
     
-    # Return empty 200 OK to let Vapi continue with assistant
-    # Or return assistant response if needed
-    return "", 200
+    # Return 200 OK - Vapi will handle with configured assistant
+    return jsonify({"status": "ok"}), 200
 
 @app.route('/webhook/twilio', methods=['POST'])
 def twilio_webhook():

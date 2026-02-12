@@ -1,0 +1,542 @@
+{
+  "metadata": {
+    "generated_by": "Scout - PAC Ventures LLC",
+    "date_generated": "2026-02-12",
+    "target_market": "Dallas-Fort Worth Metroplex",
+    "industry": "HVAC",
+    "total_leads": 50,
+    "data_sources": ["BBB.org"]
+  },
+  "leads": [
+    {
+      "company_name": "Berkeys Air Conditioning, Plumbing and Electrical",
+      "phone": "(214) 516-2479",
+      "website": "https://www.berkeys.com",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "50-100",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, full-service HVAC/plumbing/electrical, DFW Metroplex coverage",
+      "priority": "high"
+    },
+    {
+      "company_name": "ARS Rescue Rooter DFW",
+      "phone": "(972) 265-2665",
+      "website": "https://www.ars.com",
+      "address": "Irving, TX",
+      "employee_count_estimate": "100+",
+      "source": "BBB Irving",
+      "notes": "National franchise, A+ rated, serves entire DFW metroplex",
+      "priority": "low"
+    },
+    {
+      "company_name": "Cody & Sons Plumbing, Heating & Air",
+      "phone": "(214) 449-1697",
+      "website": "https://www.codyandsons.com",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "20-50",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, family-owned, serves Collin/Dallas/Ellis counties",
+      "priority": "high"
+    },
+    {
+      "company_name": "Lex Air Conditioning and Heating",
+      "phone": "(972) 217-8955",
+      "website": "https://www.lexacandheating.com",
+      "address": "Plano, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Plano",
+      "notes": "A+ rated, serves entire DFW metroplex, 15+ counties",
+      "priority": "high"
+    },
+    {
+      "company_name": "Mechanical of DFW, LLC",
+      "phone": "(817) 485-8986",
+      "website": "",
+      "address": "Fort Worth, TX",
+      "employee_count_estimate": "10-25",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, Tarrant County focused",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Texas Pride Heating and Air",
+      "phone": "(817) 323-9155",
+      "website": "",
+      "address": "Fort Worth, TX",
+      "employee_count_estimate": "5-15",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, Fort Worth focused",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Reliant Air Conditioning",
+      "phone": "(214) 594-1594",
+      "website": "https://www.reliantac.com",
+      "address": "Irving, TX",
+      "employee_count_estimate": "30-60",
+      "source": "BBB Irving",
+      "notes": "A rated, entire DFW Metroplex coverage",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Baker Brothers Plumbing & Air",
+      "phone": "(214) 328-2257",
+      "website": "https://www.bakerbrothersplumbing.com",
+      "address": "North Richland Hills, TX",
+      "employee_count_estimate": "100+",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, large operation, multi-county coverage",
+      "priority": "low"
+    },
+    {
+      "company_name": "Honest Abe Comfort Solutions",
+      "phone": "(817) 851-8424",
+      "website": "",
+      "address": "North Richland Hills, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, focused on 76053, 76117, 76148, 76180, 76182 zip codes",
+      "priority": "high"
+    },
+    {
+      "company_name": "Ace Air Conditioning & Heating Services Inc",
+      "phone": "(817) 284-3333",
+      "website": "",
+      "address": "Fort Worth, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, established Fort Worth HVAC contractor",
+      "priority": "medium"
+    },
+    {
+      "company_name": "One Hour Air Conditioning & Heating",
+      "phone": "(817) 320-9584",
+      "website": "https://www.onehourairftworth.com",
+      "address": "Fort Worth, TX",
+      "employee_count_estimate": "50-100",
+      "source": "BBB Fort Worth",
+      "notes": "National franchise, A rated, Dallas & Tarrant counties",
+      "priority": "low"
+    },
+    {
+      "company_name": "WEBB Air Heating & Cooling",
+      "phone": "(817) 382-7080",
+      "website": "",
+      "address": "Fort Worth, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, serves Clay, Denton, Motley, Tarrant counties",
+      "priority": "high"
+    },
+    {
+      "company_name": "Golden Mechanical Inc",
+      "phone": "(817) 640-5311",
+      "website": "",
+      "address": "Arlington, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Arlington",
+      "notes": "A+ rated, commercial HVAC focus, multi-county service area",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Hightower Service Inc",
+      "phone": "(817) 265-7878",
+      "website": "",
+      "address": "Arlington, TX",
+      "employee_count_estimate": "20-40",
+      "source": "BBB Arlington",
+      "notes": "A+ rated, HVAC and electrical services, Dallas & Tarrant counties",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Tom's Mechanical, Inc.",
+      "phone": "(817) 274-1660",
+      "website": "https://www.tomsmechanical.com",
+      "address": "Pantego, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Arlington",
+      "notes": "A+ rated, commercial HVAC, Tarrant County focused",
+      "priority": "medium"
+    },
+    {
+      "company_name": "AC Texas",
+      "phone": "(817) 265-9695",
+      "website": "",
+      "address": "Pantego, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Arlington",
+      "notes": "A+ rated, 40-mile radius of Fort Worth",
+      "priority": "high"
+    },
+    {
+      "company_name": "Cool Tech Mechanical",
+      "phone": "(817) 485-7100",
+      "website": "",
+      "address": "Arlington, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Arlington",
+      "notes": "A+ rated, commercial HVAC, Tarrant County",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Air Clinic Air Conditioning & Heating",
+      "phone": "(817) 858-0707",
+      "website": "",
+      "address": "Arlington, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Arlington",
+      "notes": "A+ rated, extensive coverage area - 10 counties",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Samm's Heating and Air Conditioning",
+      "phone": "(972) 596-4244",
+      "website": "",
+      "address": "Plano, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Plano",
+      "notes": "A+ rated, Collin County and North Dallas focused",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Trotter Air Services LLC",
+      "phone": "(972) 490-8888",
+      "website": "https://www.trotterair.com",
+      "address": "Plano, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Plano",
+      "notes": "A+ rated, established Plano contractor",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Classic Heating & Air",
+      "phone": "(972) 935-2000",
+      "website": "",
+      "address": "Plano, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Plano",
+      "notes": "A rated, Plano focused",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Koldaire",
+      "phone": "(972) 548-1618",
+      "website": "",
+      "address": "Allen, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Plano",
+      "notes": "A+ rated, Allen/Plano area",
+      "priority": "high"
+    },
+    {
+      "company_name": "Total Air & Heat Company",
+      "phone": "(972) 931-7200",
+      "website": "https://www.totalairandheat.com",
+      "address": "Plano, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Plano",
+      "notes": "A+ rated, 4-county service area",
+      "priority": "medium"
+    },
+    {
+      "company_name": "K&S Heating and Air",
+      "phone": "(972) 362-1511",
+      "website": "",
+      "address": "Plano, TX",
+      "employee_count_estimate": "15-25",
+      "source": "BBB Plano",
+      "notes": "A+ rated, extensive DFW coverage",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Devard's Heat, Air, Electric, & Plumbing",
+      "phone": "(972) 362-1511",
+      "website": "",
+      "address": "Plano, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Plano",
+      "notes": "A+ rated, multi-service contractor, 10-city coverage",
+      "priority": "medium"
+    },
+    {
+      "company_name": "All Service Heating & Air",
+      "phone": "(972) 542-2122",
+      "website": "",
+      "address": "McKinney, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB McKinney",
+      "notes": "A+ rated, 14-city service area in Collin County",
+      "priority": "high"
+    },
+    {
+      "company_name": "Burnside Air Conditioning, Heating & Indoor Air Quality",
+      "phone": "(972) 562-7789",
+      "website": "https://www.burnsideac.com",
+      "address": "McKinney, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB McKinney",
+      "notes": "A+ rated, Collin County and surrounding areas",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Harris Air Services, LLC",
+      "phone": "(972) 546-9484",
+      "website": "",
+      "address": "McKinney, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB McKinney",
+      "notes": "A+ rated, Collin County focused",
+      "priority": "high"
+    },
+    {
+      "company_name": "Hayward Air",
+      "phone": "(972) 529-5900",
+      "website": "",
+      "address": "McKinney, TX",
+      "employee_count_estimate": "5-12",
+      "source": "BBB McKinney",
+      "notes": "A+ rated, McKinney focused",
+      "priority": "medium"
+    },
+    {
+      "company_name": "A/C Works",
+      "phone": "(972) 529-5933",
+      "website": "",
+      "address": "McKinney, TX",
+      "employee_count_estimate": "5-10",
+      "source": "BBB McKinney",
+      "notes": "A+ rated, Greater McKinney area",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Air Repair Pros",
+      "phone": "(972) 625-1570",
+      "website": "",
+      "address": "Frisco, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Frisco",
+      "notes": "A+ rated, Collin/Denton/Rockwall counties",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Colony Air Conditioning & Heating",
+      "phone": "(972) 591-0298",
+      "website": "",
+      "address": "The Colony, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Frisco",
+      "notes": "A+ rated, 9-city coverage including Frisco, Plano",
+      "priority": "high"
+    },
+    {
+      "company_name": "C.A.S. Air Conditioning & Heating LLC",
+      "phone": "(972) 294-8080",
+      "website": "",
+      "address": "Prosper, TX",
+      "employee_count_estimate": "5-12",
+      "source": "BBB Frisco",
+      "notes": "A+ rated, 9-city coverage area",
+      "priority": "medium"
+    },
+    {
+      "company_name": "DND Heating & Air Conditioning",
+      "phone": "(972) 747-8888",
+      "website": "",
+      "address": "McKinney, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB McKinney/Frisco",
+      "notes": "A+ rated, Dallas/Collin/Rockwall counties",
+      "priority": "high"
+    },
+    {
+      "company_name": "Milestone Electric, A/C & Plumbing",
+      "phone": "(214) 717-6588",
+      "website": "https://www.milestoneelectric.com",
+      "address": "Garland, TX",
+      "employee_count_estimate": "100+",
+      "source": "BBB Garland",
+      "notes": "A+ rated, major DFW contractor, 15+ county coverage",
+      "priority": "low"
+    },
+    {
+      "company_name": "Acclaim Air Conditioning & Heating, LLC",
+      "phone": "(972) 475-9990",
+      "website": "",
+      "address": "Rowlett, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Garland",
+      "notes": "A+ rated, 7-city coverage including Garland, Dallas",
+      "priority": "high"
+    },
+    {
+      "company_name": "Platinum Air Services",
+      "phone": "(972) 278-1111",
+      "website": "",
+      "address": "Garland, TX",
+      "employee_count_estimate": "5-12",
+      "source": "BBB Garland",
+      "notes": "A+ rated, Collin/Dallas/Denton counties",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Texas Airzone",
+      "phone": "(214) 342-1353",
+      "website": "",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Dallas/Garland",
+      "notes": "A+ rated, Dallas and Rockwall counties",
+      "priority": "high"
+    },
+    {
+      "company_name": "Moss Heating and Cooling",
+      "phone": "(214) 748-8577",
+      "website": "",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, Dallas/Rockwall/Collin/Denton counties",
+      "priority": "medium"
+    },
+    {
+      "company_name": "StrikeForce Heating and Air",
+      "phone": "(214) 748-8475",
+      "website": "",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, 5-county coverage",
+      "priority": "high"
+    },
+    {
+      "company_name": "Rescue Air and Plumbing",
+      "phone": "(972) 286-2268",
+      "website": "https://www.rescueairandplumbing.com",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, DFW area coverage",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Prime Urban Aire Mechanical",
+      "phone": "(214) 823-9988",
+      "website": "",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, extensive multi-county service area",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Air Patrol Air Conditioning & Heating",
+      "phone": "(214) 578-9048",
+      "website": "",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, Collin/Dallas/Denton counties",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Stuart HVAC, LLC",
+      "phone": "(972) 386-8908",
+      "website": "",
+      "address": "Farmers Branch, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, 17-city coverage including Dallas, Plano, Frisco",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Quigley Heating & Air Conditioning",
+      "phone": "(214) 526-1700",
+      "website": "https://www.quigleyheatingandair.com",
+      "address": "Farmers Branch, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, 11-city coverage area",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Metro Air Conditioning Heating & Service",
+      "phone": "(972) 231-1946",
+      "website": "",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Dallas",
+      "notes": "A+ rated, DFW Metroplex coverage",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Fort Worth Heat and Air",
+      "phone": "(817) 332-4499",
+      "website": "",
+      "address": "Fort Worth, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, Fort Worth and surrounding areas",
+      "priority": "medium"
+    },
+    {
+      "company_name": "C&S Air Inc",
+      "phone": "(817) 477-2665",
+      "website": "https://www.csairinc.com",
+      "address": "Mansfield, TX",
+      "employee_count_estimate": "15-30",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, 7-county coverage including Arlington",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Texas Refrigeration, Inc.",
+      "phone": "(817) 838-7777",
+      "website": "",
+      "address": "Fort Worth, TX",
+      "employee_count_estimate": "20-40",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, commercial focus, Tarrant County",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Grant Air Conditioning",
+      "phone": "(817) 923-8988",
+      "website": "",
+      "address": "Fort Worth, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Fort Worth",
+      "notes": "A+ rated, Johnson/Parker/Tarrant counties",
+      "priority": "medium"
+    },
+    {
+      "company_name": "Efficient Home Solutions",
+      "phone": "(972) 890-8486",
+      "website": "https://www.efficienthomesolutions.com",
+      "address": "Plano, TX",
+      "employee_count_estimate": "10-20",
+      "source": "BBB Plano",
+      "notes": "A+ rated, 4-county service area",
+      "priority": "medium"
+    },
+    {
+      "company_name": "A-Anderson Air, Inc.",
+      "phone": "(972) 596-2665",
+      "website": "",
+      "address": "Plano, TX",
+      "employee_count_estimate": "8-15",
+      "source": "BBB Plano",
+      "notes": "A+ rated, established Plano contractor",
+      "priority": "high"
+    },
+    {
+      "company_name": "SHR A/C & Heating",
+      "phone": "(214) 613-9669",
+      "website": "",
+      "address": "Dallas, TX",
+      "employee_count_estimate": "5-12",
+      "source": "BBB Dallas/Plano",
+      "notes": "A+ rated, Collin/Dallas/Rockwall/Frisco coverage",
+      "priority": "medium"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "companies": [
+    {
+      "company_id": "cool-air-hvac",
+      "name": "Cool Air HVAC",
+      "phone": "+1-555-HVAC",
+      "forwarding_number": "+1-555-OFFICE",
+      "on_call_phone": "+1-555-TECH-01",
+      "owner_email": "owner@coolairhvac.com",
+      "office_manager_email": "dispatch@coolairhvac.com",
+      "timezone": "America/Chicago",
+      "business_hours": {
+        "weekday": "08:00-17:00",
+        "saturday": "09:00-14:00",
+        "sunday": "closed"
+      },
+      "services": {
+        "emergency_after_hours": true,
+        "routine_scheduling": true,
+        "maintenance_reminders": true
+      },
+      "pricing_tier": "standard",
+      "monthly_fee": 199,
+      "vapi_assistant_id": "",
+      "twilio_phone_number": "",
+      "calendar_integration": "google",
+      "calendar_id": "coolairhvac@gmail.com",
+      "active": true,
+      "created_at": "2026-02-11T00:00:00Z"
+    }
+  ]
+}

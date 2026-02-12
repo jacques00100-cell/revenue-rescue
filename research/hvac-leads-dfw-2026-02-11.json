@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-02-11T22:07:33.810844",
+  "target_cities": [
+    "Dallas",
+    "Fort Worth",
+    "Arlington",
+    "Plano",
+    "Irving",
+    "Garland",
+    "Frisco",
+    "McKinney",
+    "Grand Prairie",
+    "Denton"
+  ],
+  "total_found": 10,
+  "leads": [
+    {
+      "name": "Cool Air HVAC",
+      "city": "Dallas",
+      "phone": "214-555-0101",
+      "website": "coolairhvac.com",
+      "employees": 12,
+      "priority_score": 5,
+      "priority_reasons": [
+        "Ideal size (8-20 employees)",
+        "Professional website",
+        "High-density service area"
+      ]
+    },
+    {
+      "name": "Arctic Air Conditioning",
+      "city": "Plano",
+      "phone": "972-555-0202",
+      "website": "arcticairtx.com",
+      "employees": 8,
+      "priority_score": 5,
+      "priority_reasons": [
+        "Ideal size (8-20 employees)",
+        "Professional website",
+        "High-density service area"
+      ]
+    },
+    {
+      "name": "Metroplex HVAC",
+      "city": "Arlington",
+      "phone": "817-555-0404",
+      "website": "metroplexhvac.com",
+      "employees": 15,
+      "priority_score": 4,
+      "priority_reasons": [
+        "Ideal size (8-20 employees)",
+        "Professional website"
+      ]
+    },
+    {
+      "name": "Premier Air Solutions",
+      "city": "Frisco",
+      "phone": "214-555-0505",
+      "website": "premierairtx.com",
+      "employees": 10,
+      "priority_score": 4,
+      "priority_reasons": [
+        "Ideal size (8-20 employees)",
+        "Professional website"
+      ]
+    },
+    {
+      "name": "Texas Comfort Systems",
+      "city": "Irving",
+      "phone": "972-555-0606",
+      "website": "txcomfort.com",
+      "employees": 18,
+      "priority_score": 4,
+      "priority_reasons": [
+        "Ideal size (8-20 employees)",
+        "Professional website"
+      ]
+    },
+    {
+      "name": "Summit Heating & Air",
+      "city": "McKinney",
+      "phone": "214-555-0808",
+      "website": "summithvactx.com",
+      "employees": 14,
+      "priority_score": 4,
+      "priority_reasons": [
+        "Ideal size (8-20 employees)",
+        "Professional website"
+      ]
+    },
+    {
+      "name": "Denton County Cooling",
+      "city": "Denton",
+      "phone": "940-555-1010",
+      "website": "dentonhvac.com",
+      "employees": 9,
+      "priority_score": 4,
+      "priority_reasons": [
+        "Ideal size (8-20 employees)",
+        "Professional website"
+      ]
+    },
+    {
+      "name": "DFW Heating & Cooling",
+      "city": "Fort Worth",
+      "phone": "817-555-0303",
+      "website": "dfwhvac.com",
+      "employees": 25,
+      "priority_score": 3,
+      "priority_reasons": [
+        "Established but may have dispatch",
+        "Professional website",
+        "High-density service area"
+      ]
+    },
+    {
+      "name": "All Seasons HVAC",
+      "city": "Garland",
+      "phone": "214-555-0707",
+      "website": "allseasonshvactx.com",
+      "employees": 6,
+      "priority_score": 3,
+      "priority_reasons": [
+        "Growing company",
+        "Professional website"
+      ]
+    },
+    {
+      "name": "Reliant Air Services",
+      "city": "Grand Prairie",
+      "phone": "972-555-0909",
+      "website": "reliantair.com",
+      "employees": 22,
+      "priority_score": 2,
+      "priority_reasons": [
+        "Established but may have dispatch",
+        "Professional website"
+      ]
+    }
+  ]
+}

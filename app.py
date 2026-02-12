@@ -16,21 +16,25 @@ def health():
 @app.route('/webhook/vapi', methods=['POST'])
 def vapi_webhook():
     """Handle Vapi voice calls - pass through to assistant"""
-    data = request.json or {}
-    
-    # Log the call
-    call_record = {
-        "id": data.get('id', 'unknown'),
-        "timestamp": datetime.now().isoformat(),
-        "type": "voice",
-        "data": data
-    }
-    calls.append(call_record)
-    
-    print(f"📞 Vapi call: {data.get('id')}")
-    
-    # Return 200 OK - Vapi will handle with configured assistant
-    return jsonify({"status": "ok"}), 200
+    try:
+        data = request.get_json(force=True, silent=True) or {}
+        
+        # Log the call
+        call_record = {
+            "id": data.get('id', 'unknown'),
+            "timestamp": datetime.now().isoformat(),
+            "type": "voice",
+            "data": data
+        }
+        calls.append(call_record)
+        
+        print(f"📞 Vapi call: {data.get('id')}")
+        
+        # Return empty 200 - Vapi continues with assistant
+        return "", 200
+    except Exception as e:
+        print(f"❌ Webhook error: {e}")
+        return "", 200  # Still return 200 to not block calls
 
 @app.route('/webhook/twilio', methods=['POST'])
 def twilio_webhook():

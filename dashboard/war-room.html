@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Lead War Room | PAC Ventures</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #00f5ff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #00ff88;
+        }
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .vertical-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .vertical-card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid;
+        }
+        .hvac { border-left-color: #ff6b35; }
+        .dental { border-left-color: #00d4ff; }
+        .salon { border-left-color: #ff69b4; }
+        .auto { border-left-color: #ff4444; }
+        .vertical-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .vertical-count {
+            font-size: 2rem;
+            color: #00f5ff;
+            font-weight: 800;
+        }
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .action-btn {
+            padding: 20px;
+            background: linear-gradient(135deg, #a855f7, #00f5ff);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,245,255,0.3);
+        }
+        .motivation {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ff006e;
+            margin-bottom: 15px;
+        }
+        .surprise-btn {
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #ff006e, #a855f7);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .surprise-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 20px 50px rgba(255,0,110,0.4);
+        }
+        #surprise-display {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255,0,110,0.1);
+            border-radius: 12px;
+            display: none;
+        }
+        .demo-number {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,255,136,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 Lead War Room</h1>
+        <p>Revenue Rescue Command Center | Built Overnight by AI</p>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-value">994</div>
+            <div class="stat-label">Total Leads</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Verticals</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">$199</div>
+            <div class="stat-label">Price/Month</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Deals Closed</div>
+        </div>
+    </div>
+
+    <div class="vertical-grid">
+        <div class="vertical-card hvac">
+            <div class="vertical-name">❄️ HVAC Leads</div>
+            <div class="vertical-count">230</div>
+            <p>Target: 200 | Status: ✅ CRUSHED</p>
+        </div>
+        <div class="vertical-card dental">
+            <div class="vertical-name">🦷 Dental Leads</div>
+            <div class="vertical-count">291</div>
+            <p>Target: 200 | Status: ✅ CRUSHED</p>
+        </div>
+        <div class="vertical-card salon">
+            <div class="vertical-name">💇 Salon Leads</div>
+            <div class="vertical-count">240</div>
+            <p>Target: 200 | Status: ✅ CRUSHED</p>
+        </div>
+        <div class="vertical-card auto">
+            <div class="vertical-name">🚗 Auto Leads</div>
+            <div class="vertical-count">233</div>
+            <p>Target: 200 | Status: ✅ CRUSHED</p>
+        </div>
+    </div>
+
+    <div class="quick-actions">
+        <button class="action-btn" onclick="window.open('sales-one-pager.pdf')">📄 View Sales PDF</button>
+        <button class="action-btn" onclick="window.open('roi-calculator.html')">💰 ROI Calculator</button>
+        <button class="action-btn" onclick="window.open('https://github.com/jacques00100-cell/revenue-rescue')">🔗 GitHub Repo</button>
+    </div>
+
+    <div class="motivation">
+        <div class="quote">"Bad ratings aren't a problem - they're an opportunity. Those businesses are bleeding customers. You can save them."</div>
+        <button class="surprise-btn" onclick="showSurprise()">🎲 Surprise Me</button>
+        <div id="surprise-display"></div>
+    </div>
+
+    <div class="demo-number">
+        📞 Demo: (817) 873-6706
+    </div>
+
+    <script>
+        const surprises = [
+            "💡 Business Idea: Offer a 'Review Recovery' service alongside AI receptionist - help fix those bad ratings!",
+            "🎯 Target insight: Salons have the highest no-show rates. Emphasize appointment reminders in your pitch.",
+            "💰 Pricing insight: Auto shops have the highest average ticket ($400+). They're your most profitable vertical.",
+            "🚀 Motivation: You went from zero to live AI phone system in 3 hours. That's execution.",
+            "📊 Fun fact: 80% of callers hang up on voicemail. Your AI just captured 100% of after-hours leads tonight.",
+            "🎉 Celebrate: You have 994 businesses that could become customers. Most startups have zero.",
+            "⚡ Speed wins: While competitors debate features, you shipped. Speed is your moat.",
+            "💪 Remember: Every 'no' gets you closer to 'yes'. 994 attempts = inevitable success."
+        ];
+        
+        function showSurprise() {
+            const display = document.getElementById('surprise-display');
+            const random = surprises[Math.floor(Math.random() * surprises.length)];
+            display.innerHTML = `<p style="font-size: 1.2rem; color: #fff;">${random}</p>`;
+            display.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

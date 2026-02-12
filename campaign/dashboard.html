@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenue Rescue Campaign Dashboard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .header p {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .stat-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      border: 1px solid #334155;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: #6366f1;
+    }
+    
+    .stat-value {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #6366f1;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .stat-change {
+      font-size: 0.85rem;
+      margin-top: 10px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    
+    .stat-change.positive {
+      background: #064e3b;
+      color: #34d399;
+    }
+    
+    .section {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border: 1px solid #334155;
+    }
+    
+    .section h2 {
+      margin-bottom: 20px;
+      color: #f8fafc;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section h2 span {
+      font-size: 1.5rem;
+    }
+    
+    .email-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .email-card {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    
+    .email-card h3 {
+      color: #6366f1;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    .progress-bar {
+      background: #334155;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    
+    .progress-fill.open {
+      background: linear-gradient(90deg, #3b82f6, #6366f1);
+    }
+    
+    .progress-fill.click {
+      background: linear-gradient(90deg, #10b981, #34d399);
+    }
+    
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #334155;
+    }
+    
+    .metric-row:last-child {
+      border-bottom: none;
+    }
+    
+    .funnel {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .funnel-step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .funnel-bar {
+      flex: 1;
+      background: #334155;
+      height: 40px;
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .funnel-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 15px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: width 0.5s ease;
+    }
+    
+    .funnel-fill.sent { background: #6366f1; }
+    .funnel-fill.opened { background: #3b82f6; }
+    .funnel-fill.clicked { background: #10b981; }
+    .funnel-fill.replied { background: #f59e0b; }
+    
+    .funnel-label {
+      width: 100px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+    
+    .sentiment-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+    
+    .sentiment-item {
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      background: #0f172a;
+    }
+    
+    .sentiment-item.interested { border-top: 3px solid #10b981; }
+    .sentiment-item.not-now { border-top: 3px solid #f59e0b; }
+    .sentiment-item.not-interested { border-top: 3px solid #ef4444; }
+    .sentiment-item.unsubscribed { border-top: 3px solid #64748b; }
+    
+    .sentiment-count {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    
+    .leads-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .leads-table th,
+    .leads-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #334155;
+    }
+    
+    .leads-table th {
+      color: #94a3b8;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    
+    .leads-table tr:hover {
+      background: #0f172a;
+    }
+    
+    .badge {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .badge.interested { background: #064e3b; color: #34d399; }
+    .badge.not-now { background: #451a03; color: #fbbf24; }
+    .badge.not-interested { background: #450a0a; color: #f87171; }
+    .badge.question { background: #1e3a5f; color: #60a5fa; }
+    
+    .score-bar {
+      width: 60px;
+      height: 6px;
+      background: #334155;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .score-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981);
+    }
+    
+    .refresh-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+      transition: all 0.3s;
+    }
+    
+    .refresh-btn:hover {
+      background: #4f46e5;
+      transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sentiment-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .leads-table {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📊 Revenue Rescue Campaign</h1>
+    <p>Real-time email campaign analytics & sentiment tracking</p>
+  </div>
+  
+  <div class="container">
+    <!-- Overview Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="stat-total">0</div>
+        <div class="stat-label">Total Leads</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-sent">0</div>
+        <div class="stat-label">Emails Sent</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-opened">0%</div>
+        <div class="stat-label">Open Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-clicked">0%</div>
+        <div class="stat-label">Click Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-interested">0</div>
+        <div class="stat-label">Interested</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-converted">0</div>
+        <div class="stat-label">Converted</div>
+      </div>
+    </div>
+    
+    <!-- Email Performance -->
+    <div class="section">
+      <h2><span>📧</span> Email Performance</h2>
+      <div class="email-stats">
+        <div class="email-card">
+          <h3>Email 1: Cold Intro</h3>
+          <div class="metric-row">
+            <span>Sent</span>
+            <strong id="e1-sent">0</strong>
+          </div>
+          <div class="metric-row">
+            <span>Opened</span>
+            <strong id="e1-opened">0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill open" id="e1-open-bar" style="width: 0%"></div>
+          </div>
+          <div class="metric-row">
+            <span>Clicked</span>
+            <strong id="e1-clicked">0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill click" id="e1-click-bar" style="width: 0%"></div>
+          </div>
+        </div>
+        
+        <div class="email-card">
+          <h3>Email 2: Follow-up</h3>
+          <div class="metric-row">
+            <span>Sent</span>
+            <strong id="e2-sent">0</strong>
+          </div>
+          <div class="metric-row">
+            <span>Opened</span>
+            <strong id="e2-opened">0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill open" id="e2-open-bar" style="width: 0%"></div>
+          </div>
+          <div class="metric-row">
+            <span>Clicked</span>
+            <strong id="e2-clicked">0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill click" id="e2-click-bar" style="width: 0%"></div>
+          </div>
+        </div>
+        
+        <div class="email-card">
+          <h3>Email 3: Final</h3>
+          <div class="metric-row">
+            <span>Sent</span>
+            <strong id="e3-sent">0</strong>
+          </div>
+          <div class="metric-row">
+            <span>Opened</span>
+            <strong id="e3-opened">0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill open" id="e3-open-bar" style="width: 0%"></div>
+          </div>
+          <div class="metric-row">
+            <span>Clicked</span>
+            <strong id="e3-clicked">0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill click" id="e3-click-bar" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Conversion Funnel -->
+    <div class="section">
+      <h2><span>🎯</span> Conversion Funnel</h2>
+      <div class="funnel">
+        <div class="funnel-step">
+          <div class="funnel-label">Sent</div>
+          <div class="funnel-bar">
+            <div class="funnel-fill sent" id="funnel-sent" style="width: 100%">0</div>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-label">Opened</div>
+          <div class="funnel-bar">
+            <div class="funnel-fill opened" id="funnel-opened" style="width: 0%">0</div>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-label">Clicked</div>
+          <div class="funnel-bar">
+            <div class="funnel-fill clicked" id="funnel-clicked" style="width: 0%">0</div>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-label">Replied</div>
+          <div class="funnel-bar">
+            <div class="funnel-fill replied" id="funnel-replied" style="width: 0%">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sentiment Analysis -->
+    <div class="section">
+      <h2><span>💭</span> Reply Sentiment</h2>
+      <div class="sentiment-grid">
+        <div class="sentiment-item interested">
+          <div class="sentiment-count" id="sent-interested" style="color: #34d399;">0</div>
+          <div>🟢 Interested</div>
+        </div>
+        <div class="sentiment-item not-now">
+          <div class="sentiment-count" id="sent-not-now" style="color: #fbbf24;">0</div>
+          <div>🟡 Not Now</div>
+        </div>
+        <div class="sentiment-item not-interested">
+          <div class="sentiment-count" id="sent-not-interested" style="color: #f87171;">0</div>
+          <div>🔴 Not Interested</div>
+        </div>
+        <div class="sentiment-item unsubscribed">
+          <div class="sentiment-count" id="sent-unsubscribed" style="color: #94a3b8;">0</div>
+          <div>⚪ Unsubscribed</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Top Leads -->
+    <div class="section">
+      <h2><span>⭐</span> Top Performing Leads</h2>
+      <table class="leads-table" id="leads-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Business</th>
+            <th>Sentiment</th>
+            <th>Score</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="leads-tbody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <button class="refresh-btn" onclick="loadStats()">🔄 Refresh</button>
+  
+  <script>
+    const API_BASE = ''; // Same origin
+    
+    async function loadStats() {
+      try {
+        const response = await fetch(`${API_BASE}/api/stats`);
+        const data = await response.json();
+        
+        // Update overview stats
+        document.getElementById('stat-total').textContent = data.total_leads;
+        
+        const totalSent = data.email_1.sent + data.email_2.sent + data.email_3.sent;
+        document.getElementById('stat-sent').textContent = totalSent;
+        
+        const totalOpened = data.email_1.opened + data.email_2.opened + data.email_3.opened;
+        const openRate = totalSent > 0 ? Math.round((totalOpened / totalSent) * 100) : 0;
+        document.getElementById('stat-opened').textContent = openRate + '%';
+        
+        const totalClicked = data.email_1.clicked + data.email_2.clicked + data.email_3.clicked;
+        const clickRate = totalSent > 0 ? Math.round((totalClicked / totalSent) * 100) : 0;
+        document.getElementById('stat-clicked').textContent = clickRate + '%';
+        
+        document.getElementById('stat-interested').textContent = data.sentiment.interested;
+        document.getElementById('stat-converted').textContent = data.status.converted;
+        
+        // Update email stats
+        updateEmailStats('e1', data.email_1);
+        updateEmailStats('e2', data.email_2);
+        updateEmailStats('e3', data.email_3);
+        
+        // Update funnel
+        document.getElementById('funnel-sent').textContent = totalSent;
+        document.getElementById('funnel-sent').style.width = '100%';
+        
+        const openedWidth = totalSent > 0 ? (totalOpened / totalSent) * 100 : 0;
+        document.getElementById('funnel-opened').textContent = totalOpened;
+        document.getElementById('funnel-opened').style.width = openedWidth + '%';
+        
+        const clickedWidth = totalSent > 0 ? (totalClicked / totalSent) * 100 : 0;
+        document.getElementById('funnel-clicked').textContent = totalClicked;
+        document.getElementById('funnel-clicked').style.width = clickedWidth + '%';
+        
+        // Update sentiment
+        document.getElementById('sent-interested').textContent = data.sentiment.interested;
+        document.getElementById('sent-not-now').textContent = data.sentiment.not_now;
+        document.getElementById('sent-not-interested').textContent = data.sentiment.not_interested;
+        document.getElementById('sent-unsubscribed').textContent = data.status.unsubscribed;
+        
+        // Update top leads
+        updateLeadsTable(data.top_leads);
+        
+      } catch (error) {
+        console.error('Failed to load stats:', error);
+      }
+    }
+    
+    function updateEmailStats(prefix, stats) {
+      document.getElementById(`${prefix}-sent`).textContent = stats.sent;
+      
+      const openRate = stats.sent > 0 ? Math.round((stats.opened / stats.sent) * 100) : 0;
+      document.getElementById(`${prefix}-opened`).textContent = openRate + '%';
+      document.getElementById(`${prefix}-open-bar`).style.width = openRate + '%';
+      
+      const clickRate = stats.sent > 0 ? Math.round((stats.clicked / stats.sent) * 100) : 0;
+      document.getElementById(`${prefix}-clicked`).textContent = clickRate + '%';
+      document.getElementById(`${prefix}-click-bar`).style.width = clickRate + '%';
+    }
+    
+    function updateLeadsTable(leads) {
+      const tbody = document.getElementById('leads-tbody');
+      tbody.innerHTML = '';
+      
+      leads.forEach(lead => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${lead.name}</td>
+          <td>${lead.business}</td>
+          <td><span class="badge ${lead.label}">${lead.label}</span></td>
+          <td>
+            <div class="score-bar">
+              <div class="score-fill" style="width: ${(lead.score + 1) * 50}%"></div>
+            </div>
+          </td>
+          <td><span class="badge ${lead.label}">${Math.round((lead.score + 1) * 5)}/10</span></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+    
+    // Load on page load and every 30 seconds
+    loadStats();
+    setInterval(loadStats, 30000);
+  </script>
+</body>
+</html>

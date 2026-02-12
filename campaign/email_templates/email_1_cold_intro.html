@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick question about after-hours calls</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { border-bottom: 3px solid #6366f1; padding-bottom: 15px; margin-bottom: 25px; }
+    .logo { font-size: 24px; font-weight: bold; color: #6366f1; }
+    .tagline { font-size: 14px; color: #666; margin-top: 5px; }
+    .content { background: #fafafa; padding: 25px; border-radius: 8px; }
+    .stat-box { background: #6366f1; color: white; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; }
+    .stat-number { font-size: 48px; font-weight: bold; }
+    .stat-label { font-size: 14px; opacity: 0.9; }
+    .cta-button { display: inline-block; background: #10b981; color: white; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; margin: 20px 0; }
+    .phone { font-size: 24px; font-weight: bold; color: #6366f1; text-decoration: none; }
+    .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #9ca3af; }
+    .signature { margin-top: 25px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Revenue Rescue</div>
+    <div class="tagline">Never miss a booking call again</div>
+  </div>
+  
+  <div class="content">
+    <p>Hi {{first_name}},</p>
+    
+    <p>I was looking at {{business_name}}'s website and noticed you book appointments by phone. Quick question:</p>
+    
+    <p><strong>What happens when someone calls after hours?</strong></p>
+    
+    <p>I ask because we work with salons across {{city}} who were shocked when they discovered this stat:</p>
+    
+    <div class="stat-box">
+      <div class="stat-number">80%</div>
+      <div class="stat-label">of callers hang up when they reach voicemail</div>
+    </div>
+    
+    <p>That means 4 out of 5 potential new clients are going to your competitors instead.</p>
+    
+    <p>We built Revenue Rescue to answer those calls 24/7, book appointments directly into your calendar, and capture leads while you sleep.</p>
+    
+    <p><strong>Worth a 30-second call to see how it works?</strong></p>
+    
+    <p>Try our demo line: <a href="tel:+18178736706" class="phone">(817) 873-6706</a></p>
+    
+    <p style="font-size: 14px; color: #666;">Just say "book an appointment" and see how our AI handles it.</p>
+    
+    <div class="signature">
+      <p>Best,<br>
+      <strong>Connor</strong><br>
+      Founder, Revenue Rescue<br>
+      <a href="mailto:Connor@pac-holding.com">Connor@pac-holding.com</a></p>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>{{business_name}} | {{city}}, {{state}}</p>
+    <p>You're receiving this because your business matches our criteria for salons that could benefit from automated booking. 
+    <a href="{{unsubscribe_url}}">Unsubscribe</a></p>
+  </div>
+  
+  <!-- Open tracking pixel -->
+  <img src="{{tracking_pixel}}" width="1" height="1" alt="">
+</body>
+</html>

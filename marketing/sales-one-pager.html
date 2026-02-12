@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenue Rescue - AI Phone Assistant</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0a;
+      color: #e5e5e5;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #111111;
+      border-radius: 16px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 0 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.03);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+      border-bottom: 1px solid #2a2a2a;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00d4ff, #ff6b35, #00d4ff);
+      background-size: 200% 100%;
+      animation: gradient 3s ease infinite;
+    }
+    @keyframes gradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .header h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.2em;
+      font-weight: 600;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ff6b35 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+    .header p {
+      font-size: 1.1em;
+      color: #888;
+      font-weight: 300;
+    }
+    .content {
+      padding: 40px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-family: 'JetBrains Mono', monospace;
+      color: #00d4ff;
+      font-size: 0.85em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::before {
+      content: '›';
+      color: #ff6b35;
+      font-size: 1.2em;
+    }
+    .problem {
+      background: rgba(239, 68, 68, 0.05);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-left: 3px solid #ef4444;
+      padding: 24px;
+      border-radius: 8px;
+    }
+    .solution {
+      background: rgba(16, 185, 129, 0.05);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-left: 3px solid #10b981;
+      padding: 24px;
+      border-radius: 8px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .feature {
+      background: #161616;
+      border: 1px solid #2a2a2a;
+      padding: 24px;
+      border-radius: 8px;
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+    .feature:hover {
+      border-color: #00d4ff;
+      background: #1a1a1a;
+    }
+    .feature-icon {
+      font-size: 1.8em;
+      margin-bottom: 12px;
+    }
+    .feature h3 {
+      font-family: 'JetBrains Mono', monospace;
+      color: #e5e5e5;
+      font-size: 0.95em;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .feature p {
+      color: #666;
+      font-size: 0.9em;
+    }
+    .pricing-box {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+      border: 1px solid #2a2a2a;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    }
+    .pricing-box h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .pricing-box .price {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 3.5em;
+      font-weight: 700;
+      margin: 10px 0;
+      background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .pricing-box .price-note {
+      font-size: 0.85em;
+      color: #666;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pricing-box p {
+      color: #888;
+      margin-top: 20px;
+      font-size: 0.95em;
+    }
+    .cta {
+      background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+      color: white;
+      padding: 32px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer {
+      100% { left: 100%; }
+    }
+    .cta h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .demo-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.2em;
+      font-weight: 700;
+      margin: 20px 0;
+      letter-spacing: 0.05em;
+      position: relative;
+    }
+    .cta p {
+      opacity: 0.9;
+      position: relative;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #0a0a0a;
+      color: white;
+      padding: 16px 48px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 1em;
+      text-decoration: none;
+      margin-top: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .cta-button:hover {
+      background: #161616;
+      border-color: #00d4ff;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      background: #161616;
+      border: 1px solid #2a2a2a;
+      padding: 32px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #00d4ff;
+    }
+    .stat-label {
+      color: #666;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+    strong {
+      color: #e5e5e5;
+      font-weight: 600;
+    }
+    .problem strong {
+      color: #fca5a5;
+    }
+    .solution strong {
+      color: #6ee7b7;
+    }
+    @media print {
+      body {
+        background: #0a0a0a;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+      .stats {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📞 Never Miss Another Emergency Call</h1>
+      <p>AI Receptionist That Answers 24/7, Books Appointments, and Rescues Lost Revenue</p>
+    </div>
+
+    <div class="content">
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">80%</div>
+          <div class="stat-label">Don't Leave Voicemail</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Always Answering</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">$199</div>
+          <div class="stat-label">Per Month</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">❌ The Problem</div>
+        <div class="problem">
+          <p><strong>When your phone rings after hours and no one answers, 80% of callers hang up without leaving a voicemail.</strong></p>
+          <p style="margin-top: 10px;">Those aren't just missed calls—they're missed emergency repairs, missed maintenance appointments, and missed revenue walking straight to your competitor. Every unanswered ring costs you $300–$1,500 in lost job value.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">✅ The Solution</div>
+        <div class="solution">
+          <p><strong>Revenue Rescue is your AI Receptionist that never sleeps, never takes a break, and never lets a call go to waste.</strong></p>
+          <p style="margin-top: 10px;">Your customers speak to a warm, professional assistant that answers instantly, qualifies emergencies, books appointments, and sends confirmation texts—all while you sleep.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">⚡ What It Does</div>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Answers Every Call</h3>
+            <p>24/7 coverage including nights, weekends, and holidays</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🚨</div>
+            <h3>Qualifies Emergencies</h3>
+            <p>Instantly identifies urgent vs. routine calls</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📅</div>
+            <h3>Books Appointments</h3>
+            <p>Schedules directly into your calendar</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💬</div>
+            <h3>Sends Confirmations</h3>
+            <p>Automatic SMS reminders reduce no-shows</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="pricing-box">
+          <h3>Simple, Transparent Pricing</h3>
+          <div class="price">$199<span style="font-size: 0.5em;">/month</span></div>
+          <p class="price-note">Unlimited calls • No setup fees • Cancel anytime</p>
+          <p style="margin-top: 15px;">One booked emergency pays for 6+ months of service</p>
+        </div>
+      </div>
+
+      <div class="cta">
+        <h3>🔊 Hear It In Action</h3>
+        <p>Call our demo line right now to experience the AI receptionist:</p>
+        <div class="demo-number">(817) 873-6706</div>
+        <p style="opacity: 0.9;">Try an emergency scenario or routine booking—see how natural it sounds</p>
+        <a href="tel:+18178736706" class="cta-button">Call Demo Line</a>
+      </div>
+
+      <div class="footer" style="margin-top: 40px; padding: 32px; background: #0d0d0d; border-top: 1px solid #2a2a2a; text-align: center;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 1.1em; color: #00d4ff; margin-bottom: 16px;">PAC Automation</div>
+        <div style="color: #888; font-size: 0.95em; line-height: 1.8;">
+          <div style="margin-bottom: 8px;">📞 (817) 975-6105</div>
+          <div style="margin-bottom: 8px;">✉️ hello@pacautomation.com</div>
+          <div>🌐 pacautomation.com</div>
+        </div>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #2a2a2a; color: #666; font-size: 0.8em;">
+          AI-powered phone systems for service businesses<br>
+          <span style="color: #444;">Never miss another opportunity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

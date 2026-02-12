@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{first_name}}, last try</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { border-bottom: 3px solid #6366f1; padding-bottom: 15px; margin-bottom: 25px; }
+    .logo { font-size: 24px; font-weight: bold; color: #6366f1; }
+    .content { background: #fafafa; padding: 25px; border-radius: 8px; }
+    .scarcity-box { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 25px; border-radius: 8px; text-align: center; margin: 25px 0; }
+    .scarcity-number { font-size: 64px; font-weight: bold; line-height: 1; }
+    .scarcity-text { font-size: 18px; margin-top: 10px; }
+    .offer-box { background: #ecfdf5; border: 3px solid #10b981; padding: 25px; border-radius: 8px; text-align: center; margin: 25px 0; }
+    .price { font-size: 48px; font-weight: bold; color: #10b981; }
+    .price-strike { text-decoration: line-through; color: #9ca3af; font-size: 24px; }
+    .price-note { font-size: 14px; color: #6b7280; margin-top: 10px; }
+    .cta-button { display: inline-block; background: #10b981; color: white; padding: 18px 40px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 18px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .features { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .feature { padding: 10px 0; border-bottom: 1px solid #e5e7eb; }
+    .feature:last-child { border-bottom: none; }
+    .check { color: #10b981; font-weight: bold; margin-right: 10px; }
+    .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #9ca3af; }
+    .signature { margin-top: 25px; }
+    .final-note { background: #fef2f2; border-left: 4px solid #ef4444; padding: 15px; margin-top: 25px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Revenue Rescue</div>
+  </div>
+  
+  <div class="content">
+    <p>Hi {{first_name}},</p>
+    
+    <p>I'll be direct — this is my last email about Revenue Rescue.</p>
+    
+    <p>I know you're busy running {{business_name}}, and I don't want to clutter your inbox if this isn't a priority right now.</p>
+    
+    <div class="scarcity-box">
+      <div class="scarcity-number">3</div>
+      <div class="scarcity-text">beta spots remaining at 50% off</div>
+    </div>
+    
+    <div class="offer-box">
+      <p style="margin: 0 0 15px 0; font-weight: 600;">Exclusive Beta Pricing</p>
+      <div>
+        <span class="price-strike">$199/mo</span>
+        <span class="price">$99/mo</span>
+      </div>
+      <p class="price-note">First 3 salons only • Lifetime rate locked</p>
+      
+      <a href="{{calendly_url}}" class="cta-button">Book Your 15-Min Setup Call</a>
+      
+      <p style="font-size: 14px; color: #6b7280; margin-top: 15px;">No commitment required. We'll show you exactly how it works first.</p>
+    </div>
+    
+    <div class="features">
+      <div class="feature"><span class="check">✓</span> AI answers calls 24/7 in your brand voice</div>
+      <div class="feature"><span class="check">✓</span> Books directly into your existing calendar</div>
+      <div class="feature"><span class="check">✓</span> Captures leads even when you're fully booked</div>
+      <div class="feature"><span class="check">✓</span> Text/email summaries after every call</div>
+      <div class="feature"><span class="check">✓</span> Set up in under 1 hour</div>
+    </div>
+    
+    <p>If after-hours calls aren't a problem for {{business_name}}, no worries — just ignore this email and I won't follow up again.</p>
+    
+    <p>But if you're curious about how much revenue slips through the cracks after 5pm, weekends, and holidays... this is the time to find out.</p>
+    
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="{{calendly_url}}" class="cta-button">Claim Your Beta Spot →</a>
+    </div>
+    
+    <div class="signature">
+      <p>Cheers,<br>
+      <strong>Connor</strong><br>
+      Founder, Revenue Rescue<br>
+      📞 (817) 873-6706</p>
+    </div>
+    
+    <div class="final-note">
+      <strong>Not interested?</strong> Just reply "stop" and I'll remove you from all follow-ups immediately.
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>{{business_name}} | {{city}}, {{state}}</p>
+    <p><a href="{{unsubscribe_url}}">Unsubscribe</a> | <a href="{{view_in_browser}}">View in browser</a></p>
+  </div>
+  
+  <!-- Open tracking pixel -->
+  <img src="{{tracking_pixel}}" width="1" height="1" alt="">
+</body>
+</html>

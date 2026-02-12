@@ -1,0 +1,53 @@
+# Revenue Rescue Email Campaign Configuration
+# Copy to config.yaml and fill in your actual values
+
+# Email Provider Settings (Resend recommended - 3,000 free emails/month)
+email:
+  provider: "resend"  # Options: resend, sendgrid
+  resend_api_key: "re_xxxxxxxxxxxxxx"  # Your Resend API key
+  sendgrid_api_key: "SG.xxxxxxxxxxx"   # Only if using SendGrid
+  
+# Sender Configuration
+sender:
+  name: "Connor"
+  email: "Connor@pac-holding.com"
+  domain: "pac-holding.com"
+  
+# Tracking Server
+tracking:
+  base_url: "https://track.pac-holding.com"  # Your tracking domain
+  server_port: 8000
+  secret_key: "your-secret-key-here-change-this"
+  
+# OpenAI for Sentiment Analysis
+openai:
+  api_key: "sk-xxxxxxxxxxxxxx"
+  model: "gpt-4o-mini"  # Cost-effective for classification
+  
+# Campaign Settings
+campaign:
+  name: "revenue-rescue-beta"
+  dry_run: true  # Set to false when ready to send
+  rate_limit_per_hour: 20
+  
+# Demo Contact Info
+demo:
+  phone: "(817) 873-6706"
+  calendly_url: "https://calendly.com/connor-pac-holding/revenue-rescue-demo"
+  
+# Reply Monitoring (IMAP for Gmail/Outlook)
+imap:
+  enabled: true
+  server: "imap.gmail.com"
+  port: 993
+  username: "Connor@pac-holding.com"
+  password: "your-app-password"  # Use app password, not regular password
+  
+# Database
+database:
+  path: "campaign.db"
+  
+# Webhook (if using webhook-based reply tracking)
+webhook:
+  enabled: false
+  secret: "webhook-secret-token"

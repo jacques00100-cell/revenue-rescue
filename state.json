@@ -1,0 +1,51 @@
+{
+  "project": "Revenue Rescue",
+  "domain": "pac-holding.com",
+  "status": "building",
+  "phase": "validation",
+  "version": 1,
+  "_checksum": "a1b2c3d4e5f67890",
+  
+  "metrics": {
+    "leads_generated": 994,
+    "leads_validated": 0,
+    "beta_signups": 0,
+    "demo_calls_booked": 0,
+    "customers": 0
+  },
+  
+  "assets": {
+    "landing_page": {
+      "url": "https://pac-holding.com",
+      "status": "live",
+      "deployed_at": "2026-02-12T16:41:00Z"
+    },
+    "demo_line": {
+      "number": "(817) 873-6706",
+      "status": "live",
+      "updated_at": "2026-02-12T16:41:00Z"
+    },
+    "demo_line": "(817) 873-6706",
+    "business_line": "(817) 975-6105",
+    "email": "Connor@pac-holding.com"
+  },
+  
+  "pricing": {
+    "intro": 199,
+    "growth": 399,
+    "enterprise": 799,
+    "beta_discount": 0.5
+  },
+  
+  "active_agents": [
+    "LandingPageBuilder",
+    "LeadValidator", 
+    "OutreachWriter",
+    "BookingSetup",
+    "BetaHunter"
+  ],
+  
+  "blockers": [],
+  "last_updated": "2026-02-12T10:03:00Z",
+  "updated_by": "main"
+}

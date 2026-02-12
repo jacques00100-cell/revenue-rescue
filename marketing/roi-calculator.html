@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenue Rescue - ROI Calculator</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0a;
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #e5e5e5;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      padding-top: 20px;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, #00d4ff, #ff6b35);
+    }
+    .header h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ff6b35 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header p {
+      color: #888;
+      font-size: 1em;
+    }
+    .calculator {
+      background: #111111;
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 0 80px rgba(0,0,0,0.8);
+    }
+    .input-group {
+      margin-bottom: 25px;
+    }
+    .input-group label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #00d4ff;
+      font-size: 0.95em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2em;
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      color: #e5e5e5;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.2s ease;
+    }
+    .input-group input:focus {
+      outline: none;
+      border-color: #00d4ff;
+      box-shadow: 0 0 0 2px rgba(0,212,255,0.1);
+    }
+    .input-hint {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 8px;
+    }
+    .results {
+      margin-top: 30px;
+      padding: 30px;
+      background: #0d0d0d;
+      border-radius: 12px;
+      border: 1px solid #2a2a2a;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .result-row:last-child {
+      border-bottom: none;
+    }
+    .result-label {
+      font-weight: 400;
+      color: #888;
+    }
+    .result-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #e5e5e5;
+    }
+    .result-value.negative {
+      color: #ef4444;
+    }
+    .result-value.positive {
+      color: #10b981;
+    }
+    .roi-highlight {
+      margin-top: 25px;
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(124,58,237,0.1) 100%);
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(0,212,255,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .roi-highlight::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00d4ff, #7c3aed);
+    }
+    .roi-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .roi-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 3em;
+      font-weight: 700;
+      background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .break-even {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255,107,53,0.1);
+      border: 1px solid rgba(255,107,53,0.2);
+      border-radius: 8px;
+      text-align: center;
+      color: #888;
+      font-size: 0.95em;
+    }
+    .break-even strong {
+      color: #ff6b35;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .assumptions {
+      margin-top: 25px;
+      padding: 20px;
+      background: #161616;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+    }
+    .assumptions h4 {
+      font-family: 'JetBrains Mono', monospace;
+      color: #ff6b35;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .assumptions ul {
+      margin-left: 20px;
+      color: #888;
+      font-size: 0.9em;
+      line-height: 1.8;
+    }
+    .assumptions li {
+      margin-bottom: 5px;
+    }
+    .cta-box {
+      margin-top: 30px;
+      padding: 30px;
+      background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+      color: white;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer {
+      100% { left: 100%; }
+    }
+    .cta-box h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .cta-box p {
+      opacity: 0.9;
+      position: relative;
+    }
+    .cta-box .phone {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-top: 10px;
+      position: relative;
+    }
+    .footer {
+      margin-top: 40px;
+      padding: 32px;
+      background: #0d0d0d;
+      border-top: 1px solid #2a2a2a;
+      text-align: center;
+      border-radius: 0 0 16px 16px;
+      margin: 40px -40px -40px -40px;
+    }
+    .footer-brand {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1em;
+      color: #00d4ff;
+      margin-bottom: 16px;
+    }
+    .footer-contact {
+      color: #888;
+      font-size: 0.95em;
+      line-height: 1.8;
+    }
+    .footer-contact div {
+      margin-bottom: 8px;
+    }
+    .footer-tagline {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #2a2a2a;
+      color: #666;
+      font-size: 0.8em;
+    }
+    .footer-tagline span {
+      color: #444;
+    }
+    @media (max-width: 600px) {
+      .calculator {
+        padding: 25px;
+      }
+      .roi-highlight .roi-number {
+        font-size: 2.5em;
+      }
+      .footer {
+        margin: 30px -25px -25px -25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>💰 Revenue Rescue ROI Calculator</h1>
+      <p>See how much missed calls are costing you—and how much Revenue Rescue saves</p>
+    </div>
+
+    <div class="calculator">
+      <div class="input-group">
+        <label for="missedCalls">📞 Missed Calls Per Week</label>
+        <input type="number" id="missedCalls" placeholder="e.g., 5" min="0" step="1">
+        <p class="input-hint">How many calls go to voicemail or hang up after hours?</p>
+      </div>
+
+      <div class="input-group">
+        <label for="avgJobValue">💵 Average Job Value ($)</label>
+        <input type="number" id="avgJobValue" placeholder="e.g., 500" min="0" step="50">
+        <p class="input-hint">Typical HVAC service call value (emergency = $500-1500, routine = $150-400)</p>
+      </div>
+
+      <div class="input-group">
+        <label for="conversionRate">📊 Booking Rate (%)</label>
+        <input type="number" id="conversionRate" placeholder="40" min="0" max="100" step="5" value="40">
+        <p class="input-hint">What % of answered calls become booked appointments? (Industry avg: 35-50%)</p>
+      </div>
+
+      <div class="results" id="results">
+        <div class="result-row">
+          <span class="result-label">Monthly Missed Calls</span>
+          <span class="result-value" id="monthlyCalls">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Potential Bookings Lost</span>
+          <span class="result-value negative" id="lostBookings">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Monthly Revenue Lost</span>
+          <span class="result-value negative" id="revenueLost">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Revenue Rescue Cost</span>
+          <span class="result-value">$199/month</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Monthly Revenue Recovered</span>
+          <span class="result-value positive" id="revenueRecovered">—</span>
+        </div>
+
+        <div class="roi-highlight">
+          <div class="roi-label">Return on Investment</div>
+          <div class="roi-number" id="roiPercent">—</div>
+          <div class="roi-label">Annual ROI: <span id="annualRoi">—</span></div>
+        </div>
+
+        <div class="break-even">
+          You break even after booking just <strong id="breakEvenCalls">—</strong> calls per month
+        </div>
+      </div>
+
+      <div class="assumptions">
+        <h4>📋 Assumptions</h4>
+        <ul>
+          <li>80% of missed calls don't leave voicemail (industry standard)</li>
+          <li>AI answers 100% of after-hours calls</li>
+          <li>Booking rate applied to recovered calls</li>
+          <li>Revenue Rescue captures calls that would otherwise be lost</li>
+        </ul>
+      </div>
+
+      <div class="cta-box">
+        <h3>Ready to stop losing revenue?</h3>
+        <p>Call our demo line:</p>
+        <div class="phone">(817) 975-6105</div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-brand">PAC Automation</div>
+        <div class="footer-contact">
+          <div>📞 (817) 975-6105</div>
+          <div>✉️ hello@pacautomation.com</div>
+          <div>🌐 pacautomation.com</div>
+        </div>
+        <div class="footer-tagline">
+          AI-powered phone systems for service businesses<br>
+          <span>Never miss another opportunity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const missedCallsInput = document.getElementById('missedCalls');
+    const avgJobValueInput = document.getElementById('avgJobValue');
+    const conversionRateInput = document.getElementById('conversionRate');
+
+    const monthlyCallsEl = document.getElementById('monthlyCalls');
+    const lostBookingsEl = document.getElementById('lostBookings');
+    const revenueLostEl = document.getElementById('revenueLost');
+    const revenueRecoveredEl = document.getElementById('revenueRecovered');
+    const roiPercentEl = document.getElementById('roiPercent');
+    const annualRoiEl = document.getElementById('annualRoi');
+    const breakEvenCallsEl = document.getElementById('breakEvenCalls');
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: 0
+      }).format(value);
+    }
+
+    function calculate() {
+      const missedCallsPerWeek = parseFloat(missedCallsInput.value) || 0;
+      const avgJobValue = parseFloat(avgJobValueInput.value) || 0;
+      const conversionRate = parseFloat(conversionRateInput.value) || 40;
+
+      const monthlyCalls = missedCallsPerWeek * 4.33;
+      const lostBookings = monthlyCalls * (conversionRate / 100);
+      const revenueLost = lostBookings * avgJobValue;
+      const revenueRecovered = revenueLost * 0.8;
+      const monthlyCost = 199;
+      const netBenefit = revenueRecovered - monthlyCost;
+      const roi = monthlyCost > 0 ? ((netBenefit / monthlyCost) * 100) : 0;
+      const annualRoi = netBenefit * 12;
+      const breakEvenCalls = avgJobValue > 0 ? Math.ceil(monthlyCost / (avgJobValue * (conversionRate / 100))) : 0;
+
+      monthlyCallsEl.textContent = Math.round(monthlyCalls).toLocaleString();
+      lostBookingsEl.textContent = Math.round(lostBookings).toLocaleString() + ' jobs';
+      revenueLostEl.textContent = formatCurrency(revenueLost);
+      revenueRecoveredEl.textContent = formatCurrency(revenueRecovered);
+      roiPercentEl.textContent = roi > 0 ? '+' + Math.round(roi).toLocaleString() + '%' : Math.round(roi) + '%';
+      annualRoiEl.textContent = formatCurrency(annualRoi);
+      breakEvenCallsEl.textContent = breakEvenCalls;
+    }
+
+    missedCallsInput.addEventListener('input', calculate);
+    avgJobValueInput.addEventListener('input', calculate);
+    conversionRateInput.addEventListener('input', calculate);
+
+    calculate();
+  </script>
+</body>
+</html>

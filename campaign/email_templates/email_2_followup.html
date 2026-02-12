@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Re: {{first_name}} - the $500 question</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { border-bottom: 3px solid #6366f1; padding-bottom: 15px; margin-bottom: 25px; }
+    .logo { font-size: 24px; font-weight: bold; color: #6366f1; }
+    .content { background: #fafafa; padding: 25px; border-radius: 8px; }
+    .highlight-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; }
+    .math-box { background: white; border: 2px solid #e5e7eb; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .math-line { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #e5e7eb; }
+    .math-total { font-weight: bold; font-size: 18px; color: #10b981; }
+    .cta-button { display: inline-block; background: #6366f1; color: white; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; margin: 20px 0; }
+    .phone-box { background: #ecfdf5; border: 2px solid #10b981; padding: 20px; text-align: center; border-radius: 8px; margin: 20px 0; }
+    .phone { font-size: 28px; font-weight: bold; color: #10b981; text-decoration: none; }
+    .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #9ca3af; }
+    .signature { margin-top: 25px; }
+    .ps { font-size: 14px; color: #666; font-style: italic; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Revenue Rescue</div>
+  </div>
+  
+  <div class="content">
+    <p>Hi {{first_name}},</p>
+    
+    <p>Quick follow-up to my email about after-hours calls.</p>
+    
+    <div class="highlight-box">
+      <strong>Here's the $500 question:</strong> If just ONE after-hours caller became a regular client, how much revenue would that be worth to {{business_name}}?
+    </div>
+    
+    <p>Let's do some quick math:</p>
+    
+    <div class="math-box">
+      <div class="math-line">
+        <span>Average salon visit</span>
+        <span>$85</span>
+      </div>
+      <div class="math-line">
+        <span>Visits per year (loyal client)</span>
+        <span>× 6</span>
+      </div>
+      <div class="math-line" style="border-top: 2px solid #333; border-bottom: none; padding-top: 15px;">
+        <span><strong>Total client value</strong></span>
+        <span class="math-total">= $510</span>
+      </div>
+    </div>
+    
+    <p><strong>One missed call = potentially $500+ in lost lifetime value.</strong></p>
+    
+    <p>Last month, Revenue Rescue answered 47 after-hours calls for a salon in Dallas. 12 became new clients. That's potentially $6,000+ in recovered revenue from calls they would've missed.</p>
+    
+    <div class="phone-box">
+      <p style="margin: 0 0 10px 0; font-weight: 600;">See how our AI handles booking calls:</p>
+      <a href="tel:+18178736706" class="phone">(817) 873-6706</a>
+      <p style="margin: 10px 0 0 0; font-size: 14px; color: #666;">Say "book an appointment" - takes 30 seconds</p>
+    </div>
+    
+    <p>Worth finding out how many calls you're missing?</p>
+    
+    <div class="signature">
+      <p>Best,<br>
+      <strong>Connor</strong><br>
+      Founder, Revenue Rescue</p>
+    </div>
+    
+    <p class="ps">P.S. – Most salons are shocked when they see their missed call report. I can pull that data for {{business_name}} if you're curious.</p>
+  </div>
+  
+  <div class="footer">
+    <p>{{business_name}} | {{city}}, {{state}}</p>
+    <p><a href="{{unsubscribe_url}}">Unsubscribe</a> | <a href="{{view_in_browser}}">View in browser</a></p>
+  </div>
+  
+  <!-- Open tracking pixel -->
+  <img src="{{tracking_pixel}}" width="1" height="1" alt="">
+</body>
+</html>

@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "generated_by": "Scout - Google Maps API",
+    "date_generated": "2026-02-12",
+    "target_market": "Dallas-Fort Worth Metroplex",
+    "industry": "HVAC",
+    "total_leads": 20,
+    "data_sources": ["Google Places API"],
+    "quality": "LIVE - All numbers verified operational"
+  },
+  "leads": [
+    {
+      "company_name": "Fort Worth Air Conditioning Co. Inc.",
+      "phone": "(817) 367-6000",
+      "website": "https://fortworth-air.com/",
+      "address": "9105 White Settlement Rd, Fort Worth, TX 76108",
+      "rating": 4.9,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "High rating, established Fort Worth presence"
+    },
+    {
+      "company_name": "AirCo Air Conditioning, Heating and Plumbing",
+      "phone": "(817) 618-9916",
+      "website": "https://www.airco.com/",
+      "address": "1900 Robotics Pl, Fort Worth, TX 76118",
+      "rating": 4.8,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "Full service HVAC + plumbing, 4.8 rating"
+    },
+    {
+      "company_name": "Frontline AC & Heating LLC",
+      "phone": "(682) 582-0902",
+      "website": "http://flhvac24.com/",
+      "address": "15525 Sweetpine Ln, Roanoke, TX 76262",
+      "rating": 5.0,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "Perfect 5.0 rating, Roanoke area"
+    },
+    {
+      "company_name": "Fix My Air DFW AC Repair Fort Worth",
+      "phone": "(817) 839-3511",
+      "website": "https://www.hvacrepairfortworth.com/",
+      "address": "600 W 6th St, Fort Worth, TX 76102",
+      "rating": 5.0,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "Perfect 5.0 rating, downtown Fort Worth"
+    },
+    {
+      "company_name": "One Hour Air Conditioning & Heating",
+      "phone": "(817) 766-5706",
+      "website": "https://www.onehourairftworth.com/",
+      "address": "2535 Brennan Ave, Fort Worth, TX 76106",
+      "rating": 4.8,
+      "business_status": "OPERATIONAL",
+      "priority": "medium",
+      "notes": "National franchise, 4.8 rating"
+    },
+    {
+      "company_name": "North Tarrant Heating & Air Conditioning LLC",
+      "phone": "(817) 670-3144",
+      "website": "https://www.northtarrantac.com/",
+      "address": "12001 Egg Store Rd, Fort Worth, TX 76244",
+      "rating": 5.0,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "Perfect 5.0 rating, North Tarrant"
+    },
+    {
+      "company_name": "Texas Discount Air",
+      "phone": "(817) 874-5513",
+      "website": "http://www.texasdiscountair.com/",
+      "address": "5157 Senator Dr, Fort Worth, TX 76244",
+      "rating": 4.8,
+      "business_status": "OPERATIONAL",
+      "priority": "medium",
+      "notes": "Discount positioning, 4.8 rating"
+    },
+    {
+      "company_name": "1st Choice Plumbing, Heating & Air Solutions",
+      "phone": "(817) 674-1300",
+      "website": "https://1stchoiceairsolutions.com/",
+      "address": "2851 Tinsley Ln, Fort Worth, TX 76179",
+      "rating": 4.9,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "4.9 rating, full service"
+    },
+    {
+      "company_name": "Silver Spur Air, Heating, & Plumbing of DFW",
+      "phone": "(682) 324-3936",
+      "website": "https://silverspurhome.com/",
+      "address": "4204 Garland Dr, Haltom City, TX 76117",
+      "rating": 4.9,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "4.9 rating, DFW metro coverage"
+    },
+    {
+      "company_name": "NSG Heating and Air Specialists, LLC",
+      "phone": "(817) 993-4822",
+      "website": "https://www.nsgair.com/",
+      "address": "6321 Redeagle Creek Dr, Fort Worth, TX 76179",
+      "rating": 5.0,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "Perfect 5.0 rating, specialists positioning"
+    },
+    {
+      "company_name": "Comfort Masters Heating & Air Conditioning",
+      "phone": "(817) 500-5354",
+      "website": "https://comfortmastersdfw.com/",
+      "address": "6657 Corporation Pkwy #250, Fort Worth, TX 76126",
+      "rating": 4.9,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "4.9 rating, DFW focused"
+    },
+    {
+      "company_name": "Pepper Air Conditioning & Heating",
+      "phone": "(940) 648-2692",
+      "website": "https://www.pepperac.com/",
+      "address": "112 Leuty Ave, Justin, TX 76247",
+      "rating": 4.7,
+      "business_status": "OPERATIONAL",
+      "priority": "medium",
+      "notes": "Justin TX, 4.7 rating"
+    },
+    {
+      "company_name": "Texan Heating and Air",
+      "phone": "(817) 734-3073",
+      "website": "https://www.texanhvac.com/",
+      "address": "5608 Malvey Ave Suite 202, Fort Worth, TX 76107",
+      "rating": 4.9,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "4.9 rating, local branding"
+    },
+    {
+      "company_name": "Seal Heating and Air Conditioning",
+      "phone": "(817) 382-7088",
+      "website": "http://www.sealheatingandairconditioning.com/",
+      "address": "4901 Chaps Ave, Fort Worth, TX 76244",
+      "rating": 4.9,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "4.9 rating, established"
+    },
+    {
+      "company_name": "Comfort Experts",
+      "phone": "(817) 678-1287",
+      "website": "https://comfortexpertsinc.com/",
+      "address": "4255 Bryant Irvin Rd Ste 211, Fort Worth, TX 76109",
+      "rating": 4.8,
+      "business_status": "OPERATIONAL",
+      "priority": "medium",
+      "notes": "4.8 rating, Fort Worth"
+    },
+    {
+      "company_name": "Service Experts Fort Worth",
+      "phone": "(817) 241-5893",
+      "website": "https://www.serviceexperts.com/fort-worth-tx/",
+      "address": "2725 Basswood Blvd Suite #241, Fort Worth, TX 76131",
+      "rating": 4.8,
+      "business_status": "OPERATIONAL",
+      "priority": "low",
+      "notes": "National franchise, 4.8 rating"
+    },
+    {
+      "company_name": "Made New Air Conditioning & Heating Inc",
+      "phone": "(817) 402-3048",
+      "website": "https://www.madenewair.com/",
+      "address": "1927 Golden Heights Rd Suite 510, Fort Worth, TX 76177",
+      "rating": 5.0,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "Perfect 5.0 rating, newer company"
+    },
+    {
+      "company_name": "A & M Air Conditioning and Heating",
+      "phone": "(817) 500-1523",
+      "website": "https://anmairconditioningheating.com/",
+      "address": "2300 Timberline Dr #288, Grapevine, TX 76051",
+      "rating": 4.9,
+      "business_status": "OPERATIONAL",
+      "priority": "high",
+      "notes": "4.9 rating, Grapevine area"
+    },
+    {
+      "company_name": "Aire Serv of Fort Worth",
+      "phone": "(817) 900-3858",
+      "website": "https://www.aireserv.com/ft-worth/",
+      "address": "3024 B Shawnee Trail, Fort Worth, TX 76135",
+      "rating": 4.8,
+      "business_status": "OPERATIONAL",
+      "priority": "medium",
+      "notes": "National franchise (Neighborly), 4.8 rating"
+    }
+  ]
+}

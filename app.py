@@ -246,6 +246,56 @@ def vapi_webhook():
     # Default: tell Vapi to continue
     return jsonify({"status": "ok", "action": "continue"}), 200
 
+@app.route('/webhook/pac', methods=['POST'])
+def pac_webhook():
+    """NEW: Simplified PAC webhook for Vapi - bulletproof version"""
+    data = request.get_json() or {}
+    
+    message_type = data.get('message', {}).get('type', 'unknown')
+    call_id = data.get('call', {}).get('id', 'unknown')
+    
+    print(f"📞 PAC webhook hit: {message_type} | Call: {call_id}")
+    
+    # ALWAYS return 200 with action: continue to keep call alive
+    response = {
+        "status": "ok",
+        "action": "continue",
+        "message": "Continue conversation"
+    }
+    
+    # Log end-of-call reports
+    if message_type == 'end-of-call-report':
+        try:
+            message = data.get('message', {})
+            transcript = message.get('transcript', '')
+            duration = message.get('duration', 0)
+            
+            print(f"✅ Call ended: {call_id}")
+            print(f"   Duration: {duration}s")
+            print(f"   Transcript preview: {transcript[:100]}...")
+            
+            # Simple database log
+            conn = sqlite3.connect(DB_PATH)
+            c = conn.cursor()
+            c.execute('''
+                INSERT OR REPLACE INTO calls 
+                (id, timestamp, transcript, call_duration, status, raw_data)
+                VALUES (?, ?, ?, ?, ?, ?)
+            ''', (
+                call_id, 
+                datetime.now().isoformat(),
+                transcript,
+                duration,
+                'completed',
+                json.dumps(data)
+            ))
+            conn.commit()
+            conn.close()
+        except Exception as e:
+            print(f"⚠️ Logging error: {e}")
+    
+    return jsonify(response), 200
+
 @app.route('/webhook/twilio', methods=['POST'])
 def twilio_webhook():
     """Handle Twilio SMS"""
